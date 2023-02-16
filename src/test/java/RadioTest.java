@@ -269,7 +269,7 @@ public class RadioTest {
     public void reduceMaximumVol() {
         Radio radio = new Radio();
 
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
 
         radio.reduce();
 
@@ -279,5 +279,18 @@ public class RadioTest {
         Assertions.assertEquals(expected,actual);
 
     }
+    @Test
+    public void numOfDefaultStations() {
+        Radio radio = new Radio(10);
+
+        radio.setStationsCount(10);
+
+        int expected = 10;
+        int actual = radio.getStationsCount();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
 
 }
